@@ -26,7 +26,7 @@ add idDepartamento int not null;
 
 alter table funcionario
 add constraint fk_idDepartamento
-foreign key (idDepartamento) references departamento (id);
+foreign key (idDepartamento) references departamento (id_departamento);
 
 -- Criação da tabela "projeto"
 
@@ -45,11 +45,11 @@ idProjeto int not null
 
 alter table alocacao
 add constraint fk_idFuncionario
-foreign key (idFuncionario) references funcionario (id);
+foreign key (idFuncionario) references funcionario (id_funcionario);
 
 alter table alocacao
 add constraint fk_idProjeto
-foreign key (idProjeto) references projeto (id);
+foreign key (idProjeto) references projeto (id_projeto);
 
 -- Renomear coluna "sobrenome" da tabela "funcionario"
 
@@ -70,7 +70,7 @@ add idCliente int not null;
 
 alter table projeto
 add constraint fk_idCliente
-foreign key (idCliente) references cliente (id);
+foreign key (idCliente) references cliente (id_cliente);
 
 -- Criação da tabela "endereço"
 
@@ -88,7 +88,7 @@ add idEndereço int not null;
 
 alter table funcionario
 add constraint fk_idEndereço
-foreign key (idEndereço) references endereço (id);
+foreign key (idEndereço) references endereço (id_endereço);
 
 -- Renomear coluna "nomeCliente" da tabela "cliente"
 
@@ -109,7 +109,7 @@ add idCliente int not null;
 
 alter table pedido
 add constraint fk_idCliente
-foreign key (idCliente) references cliente (id);
+foreign key (idCliente) references cliente (id_cliente);
 
 -- Criação da tabela "produto"
 
@@ -129,11 +129,11 @@ idProduto int not null
 
 alter table itensPedido
 add constraint fk_idPedido
-foreign key (idPedido) references pedido (id);
+foreign key (idPedido) references pedido (id_itensPedido);
 
 alter table itensPedido
 add constraint fk_idProduto
-foreign key (idProduto) references produto (id);
+foreign key (idProduto) references produto (id_produto);
 
 -- Renomear coluna "nomeProduto" da tabela "produto"
 
@@ -161,6 +161,6 @@ add column idCliente int not null;
 
 alter table venda
 add constraint fk_idCliente
-foreign key (idCliente) references cliente (id);
+foreign key (idCliente) references cliente (id_cliente);
 
 
