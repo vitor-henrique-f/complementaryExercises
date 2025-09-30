@@ -1,7 +1,7 @@
 -- Criação da tabela "funcionario"
 
 create table funcionario(
-id int primary key,
+id_funcionario int primary key,
 nome varchar(20) not null,
 sobrenome varchar(50) not null,
 salario integer(250) default 0 
@@ -15,7 +15,7 @@ add dataNascimento date not null;
 -- Criação da tabela "departamento"
 
 create table departamento(
-id int primary key,
+id_departamento int primary key,
 nome varchar(30) not null
 );
 
@@ -31,14 +31,14 @@ foreign key (idDepartamento) references departamento (id);
 -- Criação da tabela "projeto"
 
 create table projeto(
-id int primary key,
+id_projeto int primary key,
 nomeProjeto varchar(30)
 );
 
 -- Criação da tabela "alocacoes"
  
 create table alocacao(
-id int primary key,
+id_alocacao int primary key,
 idFuncionario int not null,
 idProjeto int not null
 );
@@ -59,7 +59,7 @@ rename column sobrenome to apelido;
 -- Criação da tabela "cliente"
 
 create table cliente(
-id int primary key,
+id_cliente int primary key,
 nomeCliente varchar(50) not null
 );
 
@@ -75,7 +75,7 @@ foreign key (idCliente) references cliente (id);
 -- Criação da tabela "endereço"
 
 create table endereço(
-id int primary key,
+id_endereço int primary key,
 rua varchar(40) not null,
 cidade varchar(30) not null,
 cep int not null
@@ -98,7 +98,7 @@ rename column nomeCliente to nomeEmpresa;
 -- Criação da tabela "pedido"
 
 create table pedido(
-id int primary key,
+id_pedido int primary key,
 dataPedido date
 );
 
@@ -114,7 +114,7 @@ foreign key (idCliente) references cliente (id);
 -- Criação da tabela "produto"
 
 create table produto(
-id int primary key,
+id_produto int primary key,
 nomeProduto varchar(20) not null,
 preçoProduto int not null
 );
@@ -122,7 +122,7 @@ preçoProduto int not null
 -- Criação da tabela "itensPedido"
 
 create table itensPedido(
-id int primary key,
+id_itensPedido int primary key,
 idPedido int not null,
 idProduto int not null
 );
@@ -143,14 +143,14 @@ rename column nomeProduto to descricaoProduto;
 -- Criação da tabela "estoques"
 
 create table estoques(
-id int primary key,
+id_estoques int primary key,
 quantidade int not null
 );
 
 -- Criação da tabela "venda"
 
 create table venda(
-id int primary key,
+id_venda int primary key,
 dataVenda date
 );
 
